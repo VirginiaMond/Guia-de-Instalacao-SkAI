@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manual de Instalação - Projeto SkAI</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fc;
+  color: #333;
+}
+header {
+  background: #005792;
+  color: #ffffff;
+  padding: 1.5rem;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+nav {
+  background: #005792;
+  display: flex;
+  justify-content: center;
+}
+nav button {
+  background: #005792;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+nav button:hover, nav button.active {
+  background: #003f5c;
+  color: #ffffff;
+}
+section {
+  display: none;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  color: #333333;
+}
+section.active {
+  display: block;
+}
+h2 {
+  color: #005792;
+}
+pre {
+  background: #eaeaea;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 5px;
+}
+a {
+  color: #005792;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #005792;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-thumb {
+  background-color: #0077c2;
+  border-radius: 4px;
+}
+#contato {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  background: #f0f8ff; /* leve tom azul claro */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 87, 146, 0.2);
+}
+#contato ul {
+  list-style-type: none;
+  padding: 0;
+}
+#contato li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+#contato li a {
+  color: #005792;
+  text-decoration: none;
+  font-weight: 600;
+}
+#contato li a:hover {
+  text-decoration: underline;
+}
+.api-key-block {
+  background: #f0f8ff;
+  border-left: 4px solid #005792;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+}
+.api-key-block h4 {
+  color: #005792;
+  margin-top: 0;
+}
+.api-key-block ol {
+  margin-left: 1.2rem;
+}
+.api-key-block pre {
+  background: #e6f0fa;
+  padding: 0.8rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Manual de Instalação</h1>
+  <p><em>Sistema de Compra Rápida de Passagem Aérea Integrado com IA - Projeto SkAI</em></p>
+</header>
+
+<nav>
+  <button class="active" data-target="reconhecimentos">Reconhecimentos & Direitos</button>
+  <button data-target="clonar">Clonar repositório</button>
+  <button data-target="requirements">Instalar dependências</button>
+  <button data-target="api">Configurar chaves de API</button>
+  <button data-target="rodar">Rodar o sistema</button>
+  <button data-target="contato">Contato</button>
+</nav>
+
+<main>
+  <section id="reconhecimentos" class="active">
+    <h2>1. Reconhecimentos e Direitos Autorais</h2>
+    <p><strong>Autores:</strong> Kauan Guilherme Alves Pinheiro Santos, Lilia Rosa Coelho Moura, Raylan Bruno Santana Carvalho, Virginia Maria Mondego Ferreira, Yasmin Cantanhede Santos.</p>
+    <p><strong>Contato:</strong> kauan.santos@discente.ufma.br, liliarosaestudos@gmail.com, raylan.bruno@discente.ufma.br, virginiamondego@gmail.com, yasmin.cantanhede@discente.ufma.br</p>
+    <p><strong>Última versão:</strong> 13/06/2025 | <strong>Versão:</strong> 1.0</p>
+    <p><strong>Outros repositórios:</strong> kauanguilhermesantos, LiliaRosa19, Raylan-BR, VirginiaMond, yasmincantanhede</p>
+    <p><strong>Agradecimentos:</strong> Universidade Federal do Maranhão (UFMA), Professor Doutor Thales Levi Azevedo Valente, e monitores da disciplina Projeto e Desenvolvimento de Software.</p>
+    <h3>Licença MIT - Software Livre</h3>
+    <p>Este material é resultado de um trabalho acadêmico da disciplina Projeto de Desenvolvimento de Software, sob orientação do Prof. Dr. Thales Levi Azevedo Valente (2025.1, Engenharia da Computação, UFMA). O conteúdo é licenciado sob a Licença MIT, permitindo uso acadêmico e comercial, desde que os autores sejam creditados.</p>
+    <p>Para detalhes, visite: <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">https://opensource.org/licenses/MIT</a></p>
+    <p><em>O software é fornecido "como está", sem garantias. Os autores não se responsabilizam por danos decorrentes do uso.</em></p>
+  </section>
+
+  <section id="clonar">
+    <h2>2. Clonar o repositório para acessar o projeto</h2>
+    <p>Para começar, certifique-se de que você tem instalado em sua máquina:</p>
+    <ul>
+      <li><strong>Git</strong>: sistema de controle de versões;</li>
+      <li><strong>Python</strong>: linguagem de programação;</li>
+      <li><strong>Editor de código</strong> (recomendamos Visual Studio Code).</li>
+    </ul>
+    <p>Para verificar se o Git e o Python estão instalados, abra o terminal e rode:</p>
+    <pre>
+git --version
+python --version
+    </pre>
+    <p>Se algum desses comandos der erro, faça a instalação:</p>
+    <h3>Instalação no Linux (Debian/Ubuntu):</h3>
+    <pre>
+sudo apt update
+sudo apt install git python3 python3-pip
+    </pre>
+    <h3>Instalação no Windows:</h3>
+    <p>Baixe e instale o <a href="https://git-scm.com/download/win" target="_blank" rel="noopener noreferrer">Git para Windows</a> e o <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer">Python para Windows</a>.</p>
+    <p>Com tudo instalado, clone o repositório com o comando:</p>
+    <pre>
+git clone https://github.com/Raylan-BR/SCRPAI-IA.git
+    </pre>
+    <p>Depois de clonar, siga para a configuração das dependências e variáveis de ambiente.</p>
+  </section>
+
+  <section id="requirements">
+    <h2>3. Instalar dependências (requirements.txt)</h2>
+    <p>O arquivo <code>requirements.txt</code> lista as bibliotecas Python necessárias para o projeto.</p>
+    <p>Recomendamos criar um ambiente virtual para isolar essas dependências do seu Python global.</p>
+    <h3>Criando ambiente virtual:</h3>
+    <p>No terminal, navegue até a pasta <code>codigo/backend</code>:</p>
+    <pre>cd codigo/backend</pre>
+    <h4>Linux/macOS:</h4>
+    <pre>
+python3 -m venv .venv
+source .venv/bin/activate
+    </pre>
+    <h4>Windows:</h4>
+    <pre>
+py -3 -m venv .venv
+.\.venv\Scripts\activate
+    </pre>
+    <p>Depois que o ambiente virtual estiver ativo, instale as dependências com:</p>
+    <pre>pip install -r requirements.txt</pre>
+  </section>
+
+  <section id="api">
+    <h2>4. Configurar chaves de API</h2>
+    <p>As chaves de API são necessárias para acessar serviços externos integrados no projeto, como MongoDB, Gemini (LLM), Google Client e Firebase.</p>
+    <p>Crie um arquivo chamado <code>.env</code> na pasta <code>backend</code> e insira as chaves no seguinte formato:</p>
+    <pre>
+GOOGLE_API_KEY='sua_chave_gemini'
+MONGO_URI='sua_chave_mongo'
+GOOGLE_CLIENT_ID='sua_chave_google_client'
+FIREBASE_ADMIN_CREDENTIALS_PATH='caminho_da_sua_chave_firebase'
+    </pre>
+
+    <h3>Gerar as chaves:</h3>
+
+    <div class="api-key-block">
+    <h4>1. API Key do LLM Gemini</h4>
+    <ol>
+        <li>Acesse o site: <a href="https://aistudio.google.com/prompts/new_chat" target="_blank" rel="noopener noreferrer">AI Studio Google Gemini</a>.</li>
+        <li>Clique em <strong>"Get API Key"</strong>.</li>
+        <li>Escolha <strong>"Criar chave de API"</strong>.</li>
+        <li>Copie a chave gerada e cole no arquivo <code>.env</code> dentro de aspas simples, assim:<br>
+        <code>GOOGLE_API_KEY='sua_chave_gemini'</code></li>
+    </ol>
+    </div>
+
+    <div class="api-key-block">
+    <h4>2. API Key do MongoDB Atlas</h4>
+    <ol>
+        <li>Acesse: <a href="https://cloud.mongodb.com" target="_blank" rel="noopener noreferrer">MongoDB Atlas</a>.</li>
+        <li>Faça login ou crie uma conta.</li>
+        <li>Crie um novo projeto e em seguida um Cluster.</li>
+        <li>Após criado, vá em <strong>Database &gt; Connect</strong>.</li>
+        <li>Selecione <strong>Connect your application</strong>.</li>
+        <li>Copie a URI gerada (algo como):<br>
+        <code>mongodb+srv://usuario:senha@cluster.mongodb.net/?retryWrites=true&w=majority</code></li>
+        <li>Cole essa URI no arquivo <code>.env</code> assim:<br>
+        <code>MONGO_URI='sua_chave_mongo'</code></li>
+    </ol>
+    </div>
+
+    <div class="api-key-block">
+    <h4>3. API Key do Google Client</h4>
+    <ol>
+        <li>Acesse: <a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Console</a>.</li>
+        <li>Crie ou selecione um projeto.</li>
+        <li>Vá em <strong>APIs e Serviços &gt; Tela de consentimento OAuth</strong>.</li>
+        <li>Defina o tipo como <strong>Externo</strong> e preencha os campos obrigatórios.</li>
+        <li>Vá para <strong>Credenciais &gt; Criar credenciais &gt; ID do cliente OAuth</strong>.</li>
+        <li>Configure o tipo de aplicação como <strong>Web</strong>.</li>
+        <li>Informe os URIs de redirecionamento (exemplo: <code>http://localhost:4000/home.html</code>).</li>
+        <li>Copie o <code>client_id</code> e cole no arquivo <code>.env</code> assim:<br>
+        <code>GOOGLE_CLIENT_ID='sua_chave_google_client'</code></li>
+    </ol>
+    </div>
+
+    <div class="api-key-block">
+    <h4>4. API Key do Firebase</h4>
+    <ol>
+        <li>Acesse: <a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">Firebase Console</a>.</li>
+        <li>Selecione seu projeto.</li>
+        <li>No menu esquerdo, clique em <strong>Configurações &gt; Configurações do projeto</strong>.</li>
+        <li>Na aba Geral, role até <strong>Suas apps</strong>.</li>
+        <li>Copie a chave <code>apiKey</code> presente na configuração JavaScript, exemplo:</li>
+    </ol>
+    <pre><code>const firebaseConfig = {
+    apiKey: 'sua_chave_aqui',
+    ...
+    }</code></pre>
+    <ol start="6">
+        <li>Configure a variável no arquivo <code>.env</code> assim:<br>
+        <code>FIREBASE_ADMIN_CREDENTIALS_PATH='caminho_da_sua_chave_firebase'</code></li>
+    </ol>
+    </div>
+  </section>
+
+  <section id="rodar">
+    <h2>5. Rodar o sistema com Flask</h2>
+    <p>Após configurar as chaves e instalar as dependências, siga os passos abaixo para iniciar o servidor local:</p>
+    <ol>
+      <li>Acesse a pasta backend (se ainda não estiver nela):  
+      <pre>cd codigo/backend</pre></li>
+      <li>Inicie o servidor Flask:</li>
+      <h4>Linux/macOS:</h4>
+      <pre>python3 main.py</pre>
+      <h4>Windows:</h4>
+      <pre>python main.py</pre>
+    </ol>
+    <p>Abra o navegador e acesse: <a href="http://localhost:5000/index.html" target="_blank" rel="noopener noreferrer">http://localhost:5000/index.html</a></p>
+    <p>Se tudo estiver correto, as páginas HTML do projeto carregarão normalmente.</p>
+  </section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Para dúvidas, sugestões ou suporte, entre em contato com os autores:</p>
+  <ul>
+    <li><strong>Kauan Guilherme A. P. Santos</strong> — <a href="mailto:kauan.santos@discente.ufma.br">kauan.santos@discente.ufma.br</a></li>
+    <li><strong>Lilia Rosa C. Moura</strong> — <a href="mailto:liliarosaestudos@gmail.com">liliarosaestudos@gmail.com</a></li>
+    <li><strong>Raylan Bruno S. Carvalho</strong> — <a href="mailto:raylan.bruno@discente.ufma.br">raylan.bruno@discente.ufma.br</a></li>
+    <li><strong>Virginia Maria M. Ferreira</strong> — <a href="mailto:virginiamondego@gmail.com">virginiamondego@gmail.com</a></li>
+    <li><strong>Yasmin Cantanhede Santos</strong> — <a href="mailto:yasmin.cantanhede@discente.ufma.br">yasmin.cantanhede@discente.ufma.br</a></li>
+  </ul>
+</section>
+
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('main section');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      sections.forEach(sec => sec.classList.remove('active'));
+      button.classList.add('active');
+      const target = button.getAttribute('data-target');
+      document.getElementById(target).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+<footer>
+  &copy; 2025 Projeto SkAI — Universidade Federal do Maranhão (UFMA)
+</footer>
+
+</body>
+</html>
